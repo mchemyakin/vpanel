@@ -1,0 +1,14 @@
+SelectelAR
+ssh ключ.txt
+*.pem
+*.key
+*.p12
+*.pfx
+*.tar.gz
+.env
+.env.*
+!.env.example
+.awg31-check/
+.awg-dual-check/
+.awg31-deploy/
+.awg31-state-check/
