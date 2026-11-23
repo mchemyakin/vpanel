@@ -1054,7 +1054,7 @@ install_pingtunnel_core () {
 	echo "Installing pingtunnel 3.1 with the steady-state handshake fix."
 	local pingtunnel_tmp
 	pingtunnel_tmp="$(mktemp -d)"
-	if ! curl -fsSL "https://github.com/mchemyakin/vpanel/releases/download/vpanel_v17/pingtunnel-3.1-pr132-linux-amd64" -o "$pingtunnel_tmp/pingtunnel" ||
+	if ! curl -fsSL -H "Accept: application/octet-stream" "https://api.github.com/repos/mchemyakin/vpanel/releases/assets/781271699" -o "$pingtunnel_tmp/pingtunnel" ||
 		! echo "bf592a71a1a1302419ee293b30482e7a32c5bc8b39cd9a6ac84c8ca5529e4bcb  $pingtunnel_tmp/pingtunnel" | sha256sum -c -; then
 		rm -rf "$pingtunnel_tmp"
 		echo "Pingtunnel download or SHA256 verification failed."
